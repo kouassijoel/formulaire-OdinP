@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="text">
+                Odin@project made by kouassi joel
+            </div>
+        </div>
+        <div class="card-form">
+            <div class="title">
+                <div class="tex1">
+                  This is not a real online service! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, commodi!
+                    Sign up now to get started.
+                </div>
+            </div>
+            <div>
+                <div class="comment-section">
+                    <h1 class="comment-reply-title">Regisform </h1>
+                    <form id="commentform" class="comment-form">
+
+                      <div class="comment-form-name">
+                        <label for="first_name" data-help="¿Are you 11 from Stranger Things?">First Name</label>
+                        <input id="name" placeholder="Name *" name="name" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required>
+                      </div>
+
+                      <div class="comment-form-surname">
+                        <label for="surname" data-help="A girl has no name- Arya Stark">Last Name</label>
+                        <input id="surname" placeholder="Last Name *" name="surname" type="text" value="" size="30" maxlength="245" required>
+                      </div>
+
+                      <div class="comment-form-email">
+                        <label for="email" data-help="Format email@email.com">Email</label>
+                        <input id="email" placeholder="Email *" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required>
+                      </div>
+
+                      <div class="comment-form-url">
+                        <label for="number">Number Phone</label>
+                        <input id="number" placeholder="Number Phone" name="number" type="text" value=""  maxlength="10">
+                       
+                      </div>
+
+                      <div class="comment-form-url">
+                        <label for="password">Password</label>
+                        <input id="password" placeholder="Password" name="url" type="password" value="" >
+                        <span id="msg"></span> 
+                      </div>
+
+                      <div class="comment-form-url">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input id="confirm_password" placeholder="Password Confirm" name="url" type="password" value="" minlength="8" maxlength="200">
+                      </div>
+                      <div class="form-submit">
+                        <button onclick="validate()">Create Account</button>
+                      </div>
+                  </div>
+                  <div class="log">
+                    <p>Already have an acount? <a href="">Log in</a></p>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
