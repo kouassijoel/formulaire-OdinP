@@ -8,6 +8,11 @@
 
 }
 
+@font-face {
+    font-family: "Norse-Bold";
+    src: url("logo/Norse-Bold.otf");
+}
+
 html,
 body {
   height: 100%;
@@ -25,7 +30,7 @@ body {
     height: 900px;
     display: flex;
     width: 80px;
-    padding-right: 915px;
+    padding-right: 600px;
     background-image: url("logo/odin-lined.png");
     background-repeat: no-repeat;
     background-color: #666;
@@ -84,7 +89,7 @@ input {
 }
 
 h1 {
-    padding: 15px;
+    padding: 50px;
     margin: 0;
 }
 
@@ -117,7 +122,9 @@ h1 {
     #commentform>.comment-form-name,
     #commentform>.comment-form-surname,
     #commentform>.comment-form-email,
-    #commentform>.comment-form-url {
+    #commentform>.comment-form-number,
+    #commentform>.comment-form-password,
+    #commentform>.comment-form-confirm_password  {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         -ms-flex: 0 0 50%;
@@ -130,29 +137,24 @@ h1 {
 /* Form Stuff */
 #commentform input[type="text"],
 #commentform input[type="email"],
-#commentform input[type="password"],
-#commentform textarea {
+#commentform input[type="password"] {
     background-color: #fff;
     border: 1px solid #d8d8d8;
     border-radius: 7px;
     padding: 24px 10px 12px;
     font-size: 16px;
     font-size: 1rem;
+    color: #0f1a03;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="password"],
-textarea {
+input[type="password"]{
     background-color: #fff;
     padding: 24px 10px 12px;
     font-size: 16px;
     font-size: 1rem;
     width: 100%;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
 }
 
 :focus {
@@ -167,129 +169,18 @@ textarea:focus {
 }
 
 
-/*Animations*/
-@-webkit-keyframes silo-fade {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-1.4em);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-    }
-}
-
-@-moz-keyframes silo-fade {
-    0% {
-        opacity: 0;
-        -moz-transform: translateY(-1.4em);
-    }
-
-    100% {
-        opacity: 1;
-        -moz-transform: translateY(0);
-    }
-}
-
-@keyframes silo-fade {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(-1.4em);
-        -moz-transform: translateY(-1.4em);
-        -ms-transform: translateY(-1.4em);
-        -o-transform: translateY(-1.4em);
-        transform: translateY(-1.4em);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-        transform: translateY(0);
-    }
-}
-
-@-webkit-keyframes silo-help {
-    0% {
-        opacity: 0;
-    }
-
-    4% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes silo-help {
-    0% {
-        opacity: 0;
-    }
-
-    4% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes silo-help {
-    0% {
-        opacity: 0;
-    }
-
-    4% {
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-
 /* Label styles */
 #commentform label {
-    padding: 5px 0;
-    font-size: 14px;
+    padding: 10px 0;
     font-size: 1rem;
     top: 15px;
     left: 26px;
     color: #0f1a03;
 }
 
-/* #commentform input:focus+label,
-#commentform input[required]:valid+label,
-#commentform input:not(:placeholder-shown)+label,
-#commentform textarea:focus+label,
-#commentform textarea:valid+label,
-#commentform textarea:not(:placeholder-shown)+label {
-    display: block;
-} */
 
-#commentform input:invalid,
-#commentform textarea:invalid {
-    border: 1px solid #b92326;
-    background-color: rgba(185, 35, 38, 0.25);
+#commentform input:invalid {
+    border: 1px solid #E5E7EB;
 }
 
 #commentform input:focus:invalid,
@@ -298,35 +189,14 @@ textarea:focus {
     border: 1px solid #E5E7EB;
 }
 
-#commentform input:invalid+label,
-#commentform textarea:invalid+label {
-    color: #b92326;
-}
 
-#commentform input:invalid+label,
-#commentform textarea:invalid+label {
-    color: #b92326;
-}
 
-#commentform input:focus:invalid+label:after,
-#commentform textarea:focus:invalid+label:after {
-    content: " (" attr(data-help) ")";
-    animation: silo-help 100s;
-}
-
-#commentform input:invalid+label:after,
-#commentform textarea:invalid+label:after {
-    content: " (" attr(data-help) ")";
-}
-
-#commentform input:valid,
-#commentform textarea:valid {
+#commentform input:valid{
     border: 1px solid #8BC34A;
     background-color: rgba(139, 195, 74, 0.25);
 }
 
-#commentform input:focus:valid,
-#commentform textarea:focus:valid {
+#commentform input:focus:valid {
     border: 1px solid #8BC34A;
     background-color: transparent;
 }
@@ -336,64 +206,25 @@ textarea:focus {
     color: #8BC34A;
 }
 
-#commentform input:placeholder-shown,
-#commentform textarea:placeholder-shown {
-    background-color: transparent;
-    border: 1px solid #d8d8d8;
-}
 
 #commentform input::placeholder,
 #commentform textarea::placeholder {
-    color: #d8d8d8;
+    color: #b40e0e;
 }
 
-#commentform input::-webkit-input-placeholder,
-#commentform textarea::-webkit-input-placeholder {
+#commentform input::-webkit-input-placeholder {
     color: #d8d8d8;
 }
 
 #commentform input:-ms-input-placeholder,
 #commentform textarea:-ms-input-placeholder {
-    color: #d8d8d8;
+    color: #181616;
 }
 
-#commentform input::-moz-placeholder,
-#commentform textarea::-moz-placeholder {
-    color: #d8d8d8;
+#commentform input::-moz-placeholder{
+    color: #1b1818;
 }
 
-#commentform input:focus::placeholder,
-#commentform textarea:focus::placeholder {
-    color: transparent;
-}
-
-#commentform input:focus::-webkit-input-placeholder,
-#commentform textarea:focus::-webkit-input-placeholder {
-    color: transparent;
-}
-
-#commentform input:focus:-ms-input-placeholder,
-#commentform textarea:focus:-ms-input-placeholder {
-    color: transparent;
-}
-
-#commentform input:focus::-moz-placeholder,
-#commentform textarea:focus::-moz-placeholder {
-    color: transparent;
-}
-
-/* #commentform input[type="submit"] {
-    background-color: transparent;
-    border: 1px solid #8BC34A;
-    color: #8BC34A;
-    padding: 5px 15px;
-    font-size: 16px;
-    font-size: 1rem;
-    margin: 15px auto;
-    vertical-align: middle;
-    display: block;
-    cursor: pointer;
-} */
 #commentform button{
     background-color: #596D48;
     border-radius: 15px;
@@ -401,12 +232,13 @@ textarea:focus {
     width: 30%;
     color: white;
     border: none;
+    cursor: pointer;
 
 }
 
 .title{
     text-align: center;
-    width: 100%;
+    width: 135%;
     height: 200px;
     background-color: #ece3e3ee;
     text-align: center;
@@ -421,11 +253,12 @@ textarea:focus {
 .log a{
     color:#596D48;
     text-decoration: none;
+    font-size: 1.2rem;
 }
 
 .title .tex1{
     width: 600px;
-    margin-left: 100px;
+    margin-left: 150px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
